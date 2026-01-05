@@ -1,58 +1,74 @@
+import { motion } from 'framer-motion';
+
 function About() {
-  const interests = [
-    { icon: 'ri-code-box-line', color: '#ffbb2c', title: 'Software Development' },
-    { icon: 'ri-settings-2-fill', color: '#5578ff', title: 'Frontend Development' },
-    { icon: 'ri-window-fill', color: '#e80368', title: 'Web Development' },
-    { icon: 'ri-code-s-slash-fill', color: '#28a745', title: 'Software Engineering' },
-    { icon: 'ri-database-2-line', color: '#f1081f', title: 'Database' },
-    { icon: 'ri-file-list-3-line', color: '#47aeff', title: 'Algorithms' }
-  ]
+  const roles = [
+    { title: "Web Designer", icon: "ri-palette-line" },
+    { title: "Developer", icon: "ri-code-box-line" },
+    { title: "Data Analyst", icon: "ri-bar-chart-box-line" }
+  ];
 
   return (
-    <section id="about" className="about">
-      {/* About Me */}
+    <section id="about" className="about section-bg">
       <div className="about-me container">
         <div className="section-title">
           <h2>About</h2>
         </div>
 
         <div className="row">
-          <div className="col-lg-4" data-aos="fade-right">
-            <img src="/Portfolio/assets/img/profile.png" className="img-fluid" alt="Siddhant Shrestha" />
-          </div>
-          <div className="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-            <p>
-              I am a web designer, developer, and data analyst specializing in modern web technologies and frameworks.
-            </p>
-            <p>
-              My expertise includes working with HTML, CSS, JavaScript, React, TypeScript, Tailwind CSS, Bootstrap, WordPress, and PHP. Additionally, I have experience with frameworks like Django and Laravel, which allow me to create dynamic and robust web applications.
-            </p>
-            <p>
-              I have created numerous projects utilizing the technologies mentioned above, all of which are showcased in this portfolio. These projects reflect my ability to design and develop high-quality web applications tailored to user needs.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Interests */}
-      <div className="interests container">
-        <div className="section-title">
-          <h2>Interests</h2>
-        </div>
-
-        <div className="row">
-          {interests.map((interest, index) => (
-            <div key={index} className={`col-lg-3 col-md-4 ${index > 3 ? 'mt-4' : index > 1 ? 'mt-4 mt-md-0' : index === 1 ? 'mt-4 mt-md-0' : ''}`}>
-              <div className="icon-box">
-                <i className={interest.icon} style={{ color: interest.color }}></i>
-                <h3>{interest.title}</h3>
+          <div className="col-lg-4">
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="profile-container"
+            >
+              <div className="profile-glow"></div>
+              <div className="profile-frame">
+                <img src="/assets/img/profile.png" className="img-fluid" alt="Siddhant Shrestha" />
               </div>
-            </div>
-          ))}
+            </motion.div>
+          </div>
+          
+          <div className="col-lg-8 pt-4 pt-lg-0">
+            <motion.div 
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="content"
+            >
+              <p>
+                I am a web designer, developer, and data analyst specializing in modern web technologies and frameworks.
+              </p>
+              <p>
+                My expertise includes working with <strong>HTML, CSS, JavaScript, React, TypeScript, Tailwind CSS, Bootstrap, WordPress, and PHP</strong>. Additionally, I have experience with frameworks like <strong>Django and Laravel</strong>, which allow me to create dynamic and robust web applications.
+              </p>
+              <p>
+                I have created numerous projects utilizing the technologies mentioned above, all of which are showcased in this portfolio. These projects reflect my ability to design and develop high-quality web applications tailored to user needs.
+              </p>
+
+              <div className="focus-grid">
+                {roles.map((role, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
+                    className="focus-card"
+                  >
+                    <i className={role.icon}></i>
+                    <span>{role.title}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default About
+export default About;

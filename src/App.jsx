@@ -1,13 +1,16 @@
-import { useEffect } from 'react'
+import { useEffect, Suspense, lazy } from 'react'
 import { Helmet } from 'react-helmet-async'
 import Header from './components/Header'
-import About from './components/About'
-import Education from './components/Education'
-import Experience from './components/Experience'
-import Projects from './components/Projects'
-import Skills from './components/Skills'
-import Links from './components/Links'
+import Loading from './components/Loading'
 import './App.css'
+
+// Lazy load components
+const About = lazy(() => import('./components/About'))
+const Education = lazy(() => import('./components/Education'))
+const Experience = lazy(() => import('./components/Experience'))
+const Projects = lazy(() => import('./components/Projects'))
+const Skills = lazy(() => import('./components/Skills'))
+const Links = lazy(() => import('./components/Links'))
 
 function App() {
   useEffect(() => {
@@ -34,7 +37,7 @@ function App() {
         
         {/* Open Graph */}
         <meta property="og:locale" content="pt-BR" />
-        <meta property="og:url" content="https://siddh07.github.io/Portfolio/" />
+        <meta property="og:url" content="https://siddhant-shrestha.com.np/" />
         <meta property="og:title" content="Siddhant Shrestha | Personal Portfolio" />
         <meta property="og:site_name" content="Siddhant Shrestha | Personal Portfolio" />
         <meta property="og:type" content="website" />
@@ -61,12 +64,17 @@ function App() {
       </noscript>
 
       <Header />
-      <About />
-      <Education />
-      <Experience />
-      <Projects />
-      <Skills />
-      <Links />
+      
+      <main>
+        <Suspense fallback={<Loading />}>
+          <About />
+          <Education />
+          <Experience />
+          <Projects />
+          <Skills />
+          <Links />
+        </Suspense>
+      </main>
     </>
   )
 }

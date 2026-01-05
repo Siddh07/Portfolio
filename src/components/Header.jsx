@@ -35,72 +35,63 @@ function Header() {
             I'm a{' '}
             <ReactTyped
               strings={[
-                'Web Developer',
-                'Web Designer',
-                'Coder',
-                'Image and Data Analyst'
+                'Full-Stack Developer',
+                'Creative Web Designer',
+                'Data Solutions Architect',
+                'Image & Data Analyst'
               ]}
               typeSpeed={65}
               backSpeed={65}
               loop
               className="typing"
-              style={{ color: '#12d640' }}
+              style={{ color: '#ffbf00' }}
             />
           </h2>
           
           <nav className="nav-menu d-none d-lg-block">
             <ul>
-              <li className="active">
-                <Link to="header" smooth={true} duration={500} onClick={() => setHeaderTop(false)}>
+              <li>
+                <Link to="header" activeClass="active" spy={true} smooth={true} duration={500} onClick={() => setHeaderTop(false)}>
                   <span>Home</span>
                 </Link>
               </li>
               <li>
-                <Link to="about" smooth={true} duration={500} offset={-50} onClick={() => setHeaderTop(true)}>
+                <Link to="about" activeClass="active" spy={true} smooth={true} duration={500} offset={-50} onClick={() => setHeaderTop(true)}>
                   <span>About</span>
                 </Link>
               </li>
               <li>
-                <Link to="education" smooth={true} duration={500} offset={-50} onClick={() => setHeaderTop(true)}>
+                <Link to="education" activeClass="active" spy={true} smooth={true} duration={500} offset={-50} onClick={() => setHeaderTop(true)}>
                   <span>Education</span>
                 </Link>
               </li>
               <li>
-                <Link to="experience" smooth={true} duration={500} offset={-50} onClick={() => setHeaderTop(true)}>
+                <Link to="experience" activeClass="active" spy={true} smooth={true} duration={500} offset={-50} onClick={() => setHeaderTop(true)}>
                   <span>Experience</span>
                 </Link>
               </li>
               <li>
-                <Link to="portfolio" smooth={true} duration={500} offset={-50} onClick={() => setHeaderTop(true)}>
+                <Link to="portfolio" activeClass="active" spy={true} smooth={true} duration={500} offset={-50} onClick={() => setHeaderTop(true)}>
                   <span>Projects</span>
                 </Link>
               </li>
               <li>
-                <Link to="skills" smooth={true} duration={500} offset={-50} onClick={() => setHeaderTop(true)}>
+                <Link to="skills" activeClass="active" spy={true} smooth={true} duration={500} offset={-50} onClick={() => setHeaderTop(true)}>
                   <span>Skills</span>
                 </Link>
               </li>
               <li>
-                <a href="/Portfolio/Resume_Siddhant-Shrestha.pdf" target="_blank" rel="noopener noreferrer">
+                <a href="/Resume_Siddhant-Shrestha.pdf" target="_blank" rel="noopener noreferrer">
                   <span>Resume</span>
                 </a>
               </li>
               <li>
-                <Link to="links" smooth={true} duration={500} offset={-50} onClick={() => setHeaderTop(true)}>
-                  <span>Links</span>
+                <Link to="links" activeClass="active" spy={true} smooth={true} duration={500} offset={-50} onClick={() => setHeaderTop(true)}>
+                  <span>Connect</span>
                 </Link>
               </li>
             </ul>
           </nav>
-
-          <div className="social-links">
-            <a href="https://www.linkedin.com/in/siddhant-shrestha-341853198/" target="_blank" rel="noopener noreferrer" className="linkedin">
-              <i className="bx bxl-linkedin"></i>
-            </a>
-            <a href="https://www.github.com/Siddh07" target="_blank" rel="noopener noreferrer" className="github">
-              <i className="bx bxl-github"></i>
-            </a>
-          </div>
         </div>
       </header>
 
@@ -109,49 +100,49 @@ function Header() {
         <>
           <nav className="mobile-nav d-lg-none">
             <ul>
-              <li className="active">
-                <Link to="header" smooth={true} duration={500} onClick={closeMobileNav}>
+              <li>
+                <Link to="header" activeClass="active" spy={true} smooth={true} duration={500} onClick={closeMobileNav}>
                   <span>Home</span>
                 </Link>
               </li>
               <li>
-                <Link to="about" smooth={true} duration={500} offset={-50} onClick={closeMobileNav}>
+                <Link to="about" activeClass="active" spy={true} smooth={true} duration={500} offset={-50} onClick={closeMobileNav}>
                   <span>About</span>
                 </Link>
               </li>
               <li>
-                <Link to="education" smooth={true} duration={500} offset={-50} onClick={closeMobileNav}>
+                <Link to="education" activeClass="active" spy={true} smooth={true} duration={500} offset={-50} onClick={closeMobileNav}>
                   <span>Education</span>
                 </Link>
               </li>
               <li>
-                <Link to="experience" smooth={true} duration={500} offset={-50} onClick={closeMobileNav}>
+                <Link to="experience" activeClass="active" spy={true} smooth={true} duration={500} offset={-50} onClick={closeMobileNav}>
                   <span>Experience</span>
                 </Link>
               </li>
               <li>
-                <Link to="portfolio" smooth={true} duration={500} offset={-50} onClick={closeMobileNav}>
+                <Link to="portfolio" activeClass="active" spy={true} smooth={true} duration={500} offset={-50} onClick={closeMobileNav}>
                   <span>Projects</span>
                 </Link>
               </li>
               <li>
-                <Link to="skills" smooth={true} duration={500} offset={-50} onClick={closeMobileNav}>
+                <Link to="skills" activeClass="active" spy={true} smooth={true} duration={500} offset={-50} onClick={closeMobileNav}>
                   <span>Skills</span>
                 </Link>
               </li>
               <li>
-                <a href="/Portfolio/Resume_Siddhant-Shrestha.pdf" target="_blank" rel="noopener noreferrer">
+                <a href="/Resume_Siddhant-Shrestha.pdf" target="_blank" rel="noopener noreferrer">
                   <span>Resume</span>
                 </a>
               </li>
               <li>
-                <Link to="links" smooth={true} duration={500} offset={-50} onClick={closeMobileNav}>
-                  <span>Links</span>
+                <Link to="links" activeClass="active" spy={true} smooth={true} duration={500} offset={-50} onClick={closeMobileNav}>
+                  <span>Connect</span>
                 </Link>
               </li>
             </ul>
           </nav>
-          <div className="mobile-nav-overly" onClick={closeMobileNav}></div>
+          <div className="mobile-nav-overlay" onClick={closeMobileNav}></div>
         </>
       )}
 

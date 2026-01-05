@@ -1,60 +1,118 @@
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+
 function Projects() {
+  const [filter, setFilter] = useState('All');
+
   const projects = [
     {
       title: 'E-Commerce Website',
-      description: 'A modern and responsive e-commerce platform with product listings, shopping cart, and a clean design to ensure smooth and enjoyable online shopping.',
-      image: '/Portfolio/assets/img/project/Ecommerce-website.png',
+      category: 'Web App',
+      description: 'A modern and responsive e-commerce platform with product listings, shopping cart, and a clean design.',
+      image: '/assets/img/project/Ecommerce-website.png',
       demo: 'https://siddh07.github.io/Ecommerce/',
-      repo: 'https://github.com/siddh07/Ecommerce'
+      repo: 'https://github.com/siddh07/Ecommerce',
+      tech: ['React', 'Vite', 'JavaScript', 'CSS3']
     },
     {
       title: 'School Website (Template)',
-      description: 'A clean and responsive school website template designed to showcase courses, events, and activities with a user-friendly layout for students and parents.',
-      image: '/Portfolio/assets/img/project/school.png',
+      category: 'Frontend Template',
+      description: 'A professional school UI developed using React and Tailwind CSS for interactive school management features.',
+      image: '/assets/img/project/school.png',
       demo: 'https://pujanjoci.github.io/School/',
-      repo: 'https://github.com/pujanjoci/School'
+      repo: 'https://github.com/pujanjoci/School',
+      tech: ['React', 'Tailwind CSS', 'Vite', 'JavaScript']
     },
     {
-      title: 'School Website (Template)',
-      description: 'A lightweight and customizable template for school websites, featuring responsive design, easy navigation, and a simple structure for quick deployment.',
-      image: '/Portfolio/assets/img/project/school-template.png',
+      title: 'School Template V2',
+      category: 'Frontend Template',
+      description: 'A modular school website template leveraging Vite and React for a performant development experience.',
+      image: '/assets/img/project/school-template.png',
       demo: 'https://pujanjoci.github.io/school-template/',
-      repo: 'https://github.com/Siddh07/School-template'
+      repo: 'https://github.com/Siddh07/School-template',
+      tech: ['React', 'Tailwind CSS', 'Vite', 'JavaScript']
     }
-  ]
+  ];
+
+  const categories = ['All', 'Web App', 'Frontend Template'];
+  const filteredProjects = filter === 'All' ? projects : projects.filter(p => p.category === filter);
 
   return (
-    <section id="portfolio" className="portfolio">
+    <section id="portfolio" className="projects-section">
       <div className="container">
-        <div className="section-title">
-          <h2>Projects</h2>
-          <p>Recent Projects.</p>
+        <div className="section-header text-center mb-5">
+           <motion.span 
+             initial={{ opacity: 0 }}
+             whileInView={{ opacity: 1 }}
+             className="projects-label"
+           >
+             PROJECTS
+           </motion.span>
+           <motion.h2 
+             initial={{ opacity: 0, y: 20 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             className="projects-main-title"
+           >
+             RECENT PROJECTS
+           </motion.h2>
+           <div className="section-divider mx-auto"></div>
+           <motion.p 
+             initial={{ opacity: 0, y: 20 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             className="projects-subtitle"
+           >
+             A showcase of my recent work in frontend development and web design.
+           </motion.p>
         </div>
 
-        <div className="row portfolio-container">
-          {projects.map((project, index) => (
-            <div key={index} className="col-lg-4 col-md-6 portfolio-item">
-              <div className="card shadow-sm" style={{ borderRadius: '12px', overflow: 'hidden', backgroundColor: '#09203a', color: '#fff' }}>
-                <img src={project.image} className="card-img-top" alt={project.title} />
-                <div className="card-body">
-                  <h5 className="card-title" style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.25rem', color: '#fff' }}>
-                    {project.title}
-                  </h5>
-                  <p className="card-text" style={{ fontFamily: "'Roboto', sans-serif", fontSize: '0.95rem', color: '#e0e0e0' }}>
-                    {project.description}
-                  </p>
-                  <div className="d-flex justify-content-between">
-                    <a href={project.demo} target="_blank" rel="noopener noreferrer" className="btn btn-light btn-sm">View Demo</a>
-                    <a href={project.repo} target="_blank" rel="noopener noreferrer" className="btn btn-outline-light btn-sm">View Repo</a>
+          
+
+        <motion.div layout className="row">
+          <AnimatePresence mode='popLayout'>
+            {filteredProjects.map((project, index) => (
+              <motion.div 
+                layout
+                key={project.title}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.4 }}
+                className="col-lg-4 col-md-6 mb-4"
+              >
+                <div className="project-card ">
+                  <div className="project-image-container">
+                    <img src={project.image} alt={project.title} className="project-image" />
+                    <div className="project-overlay">
+                      <div className="overlay-content">
+                        <div className="project-links">
+                          <a href={project.demo} target="_blank" rel="noopener noreferrer" className="btn-view-demo">View Demo</a>
+                          <a href={project.repo} target="_blank" rel="noopener noreferrer" className="btn-view-repo">View Repo</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="project-info">
+                    <div className="d-flex justify-content-between align-items-center mb-2">
+                       <span className="project-category-tag">{project.category}</span>
+                    </div>
+                    <h3 className="project-title">{project.title}</h3>
+                    <p className="project-description">{project.description}</p>
+                    
+                    <div className="tech-stack">
+                      {project.tech.map((t, i) => (
+                        <span key={i} className="tech-badge">{t}</span>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          ))}
-        </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
       </div>
     </section>
-  )
+  );
 }
 
-export default Projects
+export default Projects;

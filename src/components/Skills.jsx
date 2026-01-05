@@ -22,58 +22,45 @@ function Skills() {
   ]
 
   return (
-    <section id="skills" className="services">
-      <div className="container">
-        <div className="section-title">
-          <h2>Skills</h2>
-        </div>
+    <section  className="skills-section">
+      <div className="container-fluid p-0">
+        <div className="skills-wrapper d-flex align-items-stretch">
+          
         
-        <div className="row">
-          <div className="col-lg-12" data-aos="fade-up">
-            {/* Languages and Databases */}
-            <div className="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style={{ background: '#fff', borderRadius: '8px' }}>
-              <h4 style={{ textAlign: 'left', color: '#09203a' }}>Languages and Databases</h4>
-              <p style={{ textAlign: 'left' }}>
-                {languages.map((lang, index) => (
-                  <img 
-                    key={index}
-                    src={lang.src} 
-                    alt={lang.alt}
-                    height={lang.height}
-                    width={lang.width}
-                  />
-                ))}
-              </p>
-            </div>
 
-            {/* Frameworks */}
-            <div className="col-md-12 mt-4 mt-md-0 icon-box" data-aos="lefade-up" data-aos-delay="100" style={{ background: '#fff', borderRadius: '8px' }}>
-              <h4 style={{ textAlign: 'left', color: '#09203a' }}>Frameworks</h4>
-              <p style={{ textAlign: 'left' }}>
-                {frameworks.map((framework, index) => (
-                  <img 
-                    key={index}
-                    src={framework.src} 
-                    alt={framework.alt}
-                  />
-                ))}
-              </p>
-            </div>
+          {/* Main Grid Content */}
+          <div className="skills-grid-container flex-grow-1 p-4 p-md-5 d-flex flex-column justify-content-center">
+             
+             {/* Header Section */}
+             <div className="text-center mb-5">
+                <h2 className="what-i-do-title">Technical Skills</h2>
+                <p className="what-i-do-text mx-auto">
+                  Technologies & Tools I Use to Build Modern Web Applications
+                </p>
+             </div>
 
-            {/* Tools */}
-            <div className="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style={{ background: '#fff', borderRadius: '8px' }}>
-              <h4 style={{ textAlign: 'left', color: '#09203a' }}>Tools</h4>
-              <p style={{ textAlign: 'left' }}>
-                {tools.map((tool, index) => (
-                  <img 
-                    key={index}
-                    src={tool.src} 
-                    alt={tool.alt}
-                  />
-                ))}
-              </p>
-            </div>
+             {/* Internal Scrollable Grid Container */}
+             <div className="skills-internal-scroll">
+                <div className="row justify-content-center">
+                   {[...languages, ...frameworks, ...tools].map((skill, index) => (
+                      <div key={index} className="col-6 col-md-4 col-lg-3 p-3 mb-3">
+                         <div className="skill-card">
+                            <div className="skill-icon">
+                               <img src={skill.src} alt={skill.alt} />
+                            </div>
+                            <div className="skill-name">{skill.alt}</div>
+                         </div>
+                      </div>
+                   ))}
+                </div>
+             </div>
           </div>
+
+          {/* Right Decoration */}
+          <div className="skills-sidebar-right d-none d-md-flex align-items-center justify-content-center">
+             <div className="dashed-line"></div>
+          </div>
+
         </div>
       </div>
     </section>

@@ -1,46 +1,72 @@
+import { motion } from 'framer-motion';
+
 function Education() {
   const certifications = [
     {
-      img: '/Portfolio/assets/img/certification/udemy.png',
+      img: '/assets/img/certification/HackerRank.png',
+      title: 'Frontend Developer (React)',
+      link: 'https://www.hackerrank.com/certificates/6828d0daf2c2'
+    },
+    {
+      img: '/assets/img/certification/udemy.png',
       title: 'CSS, Js and Bootstrap',
       link: 'https://www.udemy.com/certificate/UC-6db6cff0-98ca-4679-a248-cb9c4db22cc8/'
     },
     {
-      img: '/Portfolio/assets/img/certification/udemy.png',
+      img: '/assets/img/certification/udemy.png',
       title: 'React-Basic',
       link: 'https://www.udemy.com/certificate/UC-bf888c85-29fe-4a57-b39c-0c5b16d0a950/'
     },
     {
-      img: '/Portfolio/assets/img/certification/udemy.png',
+      img: '/assets/img/certification/udemy.png',
       title: 'React Course',
       link: 'https://www.udemy.com/certificate/UC-a2cf7e03-ae26-4640-885f-5b922fbcb7af/'
     },
     {
-      img: '/Portfolio/assets/img/certification/corsera.png',
+      img: '/assets/img/certification/corsera.png',
       title: 'Adobe Illustrator',
       link: 'https://www.coursera.org/account/accomplishments/verify/8YGAWBHWBFYY'
     },
     {
-      img: '/Portfolio/assets/img/certification/corsera.png',
+      img: '/assets/img/certification/corsera.png',
       title: 'Basic Image Classification',
       link: 'https://www.coursera.org/account/accomplishments/verify/5LSK7BJHACBV'
     },
     {
-      img: '/Portfolio/assets/img/certification/corsera.png',
+      img: '/assets/img/certification/corsera.png',
       title: 'AWS S3 Basics',
       link: 'https://coursera.org/share/a49f7570c0cebf51c4bcc09f3e75f48e'
     },
     {
-      img: '/Portfolio/assets/img/certification/corsera.png',
+      img: '/assets/img/certification/corsera.png',
       title: 'Figma',
       link: 'https://www.coursera.org/account/accomplishments/verify/6VGSFJ3ZYPDJ'
     },
     {
-      img: '/Portfolio/assets/img/certification/corsera.png',
+      img: '/assets/img/certification/corsera.png',
       title: 'Data Analysis',
       link: 'https://www.coursera.org/account/accomplishments/verify/VBDSHNDFQT2T'
     }
   ]
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" }
+    }
+  };
 
   return (
     <section id="education" className="services">
@@ -49,76 +75,116 @@ function Education() {
           <h2>Education</h2>
         </div>
         
-        <div className="row">
-          <div className="col-lg-12" data-aos="fade-up" style={{ display: 'inline-block' }}>
-            {/* Herald College */}
-            <div className="col-md-4 mt-4 mt-md-0 ml-0 icon-box p-2" data-aos="fade-up" data-aos-delay="100" style={{ padding: '0px 0px', paddingBottom: '5px', display: 'inline-block' }}>
-              <a href="https://www.pucminas.br/" target="_blank" rel="noopener noreferrer">
-                <img src="/Portfolio/assets/img/education/Herald-College.jpg" className="img-fluid" alt="Herald College" />
-              </a>
-              <p style={{ textAlign: 'left', color: '#fff', padding: '10px 35px' }}>
-                <em>Bachelors in Information Technology</em>
-              </p>
-              <h6 style={{ textAlign: 'left', color: '#fff', padding: '0px 10px' }}>
-                <b>Relevant Coursework</b>
-              </h6>
-              <ul style={{ textAlign: 'left', color: '#fff' }}>
-                <li>Algorithms and Data Structure</li>
-                <li>Modular Programming</li>
-                <li>Database</li>
-                <li>Web and backend development.</li>
-                <li>Systems design, architecture and modeling</li>
-              </ul>
+        <div className="academic-education-wrapper">
+          {/* Herald College */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="academic-card"
+          >
+            <div className="academic-content">
+              <div className="academic-logo-section">
+                <div className="academic-logo-wrapper">
+                  <img src="/assets/img/education/Herald-College.png" alt="Herald College" />
+                </div>
+              </div>
+              
+              <div className="academic-info">
+                <h3 className="academic-degree">Bachelors in Information Technology</h3>
+                <p className="academic-institution">Herald College Kathmandu (University of Wolverhampton)</p>
+                
+                <div className="coursework-section">
+                  <h6 className="text-white mb-3 font-weight-bold">Focused Coursework:</h6>
+                  <div className="coursework-grid">
+                    <div className="coursework-item"><i className="ri-checkbox-circle-line"></i> Algorithms and Data Structure</div>
+                    <div className="coursework-item"><i className="ri-checkbox-circle-line"></i> Modular Programming</div>
+                    <div className="coursework-item"><i className="ri-checkbox-circle-line"></i> Database Systems (SQL)</div>
+                    <div className="coursework-item"><i className="ri-checkbox-circle-line"></i> Web & Backend Development</div>
+                    <div className="coursework-item"><i className="ri-checkbox-circle-line"></i> System Architecture & Modeling</div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </motion.div>
 
-            {/* VS Niketan */}
-            <div className="col-md-4 mt-4 mt-md-0 ml-0 icon-box p-2" data-aos="fade-up" data-aos-delay="100" style={{ padding: '0px 0px', paddingBottom: '5px', display: 'inline-block' }}>
-              <a href="https://www.pucminas.br/" target="_blank" rel="noopener noreferrer">
-                <img src="/Portfolio/assets/img/education/VS-Niketan.png" className="img-fluid" alt="VS Niketan" />
-              </a>
-              <p style={{ textAlign: 'left', color: '#fff', padding: '10px 35px' }}>
-                <em>+2 - Major in Computer Science</em>
-              </p>
-              <h6 style={{ textAlign: 'left', color: '#fff', padding: '0px 10px' }}>
-                <b>Relevant Coursework</b>
-              </h6>
-              <ul style={{ textAlign: 'left', color: '#fff' }}>
-                <li>C++ language</li>
-                <li>HTML, CSS and JS</li>
-                <li>C Programming</li>
-                <li>Q Basics</li>
-                <li>Computer Principle</li>
-              </ul>
+          {/* VS Niketan */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="academic-card"
+          >
+            <div className="academic-content">
+              <div className="academic-logo-section">
+                <div className="academic-logo-wrapper">
+                  <img src="/assets/img/education/VS-Niketan.png" alt="VS Niketan" />
+                </div>
+              </div>
+              
+              <div className="academic-info">
+                <h3 className="academic-degree">+2 Major in Computer Science</h3>
+                <p className="academic-institution">VS Niketan Secondary School</p>
+                
+                <div className="coursework-section">
+                  <h6 className="text-white mb-3 font-weight-bold">Focused Coursework:</h6>
+                  <div className="coursework-grid">
+                    <div className="coursework-item"><i className="ri-checkbox-circle-line"></i> C++ language</div>
+                    <div className="coursework-item"><i className="ri-checkbox-circle-line"></i> HTML, CSS and JS</div>
+                    <div className="coursework-item"><i className="ri-checkbox-circle-line"></i> C Programming</div>
+                    <div className="coursework-item"><i className="ri-checkbox-circle-line"></i> Q Basics</div>
+                    <div className="coursework-item"><i className="ri-checkbox-circle-line"></i> Computer Principle</div>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
 
       {/* Online Certifications */}
-      <div className="portfolio">
-        <div className="container">
-          <div className="section-title">
-            <h2>Online Certification</h2>
-          </div>
-
-          <div className="row portfolio-container">
-            {certifications.map((cert, index) => (
-              <div key={index} className="col-lg-4 col-md-6 portfolio-item filter-app">
-                <div className="portfolio-wrap">
-                  <img src={cert.img} className="img-fluid" alt={cert.title} />
-                  <div className="portfolio-info">
-                    <h4>{cert.title}</h4>
-                    <div className="portfolio-links">
-                      <a href={cert.link} target="_blank" rel="noopener noreferrer" title="Certificate">
-                        <i className="bx bx-link"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+      <div className="container mt-5 pt-lg-5">
+        <div className="cert-section-header">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            style={{ color: '#fff', fontSize: '2.5rem', fontWeight: 800 }}
+          >
+            Online Certifications
+          </motion.h2>
         </div>
+
+        <motion.div 
+          className="cert-grid"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          {certifications.map((cert, index) => (
+            <motion.div 
+              key={index} 
+              variants={itemVariants}
+              className="cert-card"
+            >
+              <div className="cert-img-container">
+                <img src={cert.img} alt={cert.title} />
+              </div>
+              <h4 className="cert-title">{cert.title}</h4>
+              <a 
+                href={cert.link} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="cert-link-btn"
+              >
+                Verify Credentials <i className="ri-external-link-line"></i>
+              </a>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </section>
   )

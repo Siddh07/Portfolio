@@ -1,53 +1,88 @@
+import { motion } from 'framer-motion';
+
 function Links() {
   const socialLinks = [
     {
       name: 'GitHub',
       url: 'https://github.com/Siddh07',
-      logo: '/Portfolio/assets/img/links/github.svg'
+      logo: '/assets/img/links/github.svg'
     },
     {
       name: 'Linkedin',
       url: 'https://www.linkedin.com/in/siddhant-shrestha-341853198/',
-      logo: '/Portfolio/assets/img/links/linkedin.svg'
+      logo: '/assets/img/links/linkedin.svg'
     },
     {
       name: 'Instagram',
       url: 'https://www.instagram.com/shresthasiddhant',
-      logo: '/Portfolio/assets/img/links/instagram.svg'
+      logo: '/assets/img/links/instagram.svg'
     },
     {
       name: 'Youtube',
-      url: 'https://www.youtube.com/@Me9alon',
-      logo: '/Portfolio/assets/img/links/youtube.svg'
+      url: 'https://www.youtube.com',
+      logo: '/assets/img/links/youtube.svg'
     }
   ]
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+
   return (
-    <section id="links" className="services">
+    <section id="links" className="links-section">
       <div id="container">
-        <a className="profile_link" href="https://github.com/Siddh07.png" target="_blank" rel="noopener noreferrer">
+        <h2 className="links-title" data-aos="fade-up">Let's Connect</h2>
+        
+        <motion.a 
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          className="profile_link" 
+          href="https://github.com/Siddh07.png" 
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
           <img className="profile" src="https://github.com/Siddh07.png" alt="Profile" />
-        </a>
+        </motion.a>
 
-        <div className="links-container">
-          <strong className="description">Getting in touch! 👋</strong>
-
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="social-grid"
+        >
           {socialLinks.map((link, index) => (
-            <a key={index} className="link" href={link.url} target="_blank" rel="noopener noreferrer">
-              <img className="logo" src={link.logo} alt={`${link.name} Logo`} />
-              {link.name}
-            </a>
+            <motion.a
+              key={index}
+              variants={itemVariants}
+              className="social-card"
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="social-icon-wrapper">
+                <img src={link.logo} alt={`${link.name} Logo`} />
+              </div>
+              <span className="social-name">{link.name}</span>
+            </motion.a>
           ))}
-        </div>
-
-        <div id="container" style={{ textAlign: 'center', padding: '50px', backgroundColor: '#f4f4f9', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', maxWidth: '600px', margin: '50px auto 0' }}>
-          <h1 style={{ fontFamily: "'Arial', sans-serif", fontSize: '36px', color: '#333', marginBottom: '20px', textDecoration: 'underline', cursor: 'auto' }}>
-            Siddhant Shrestha
-          </h1>
-          <p style={{ fontFamily: "'Arial', sans-serif", fontSize: '18px', color: '#666', lineHeight: '1.6', marginTop: '0' }}>
-            Let's connect and create a beautiful project.
-          </p>
-        </div>
+        </motion.div>
       </div>
     </section>
   )
