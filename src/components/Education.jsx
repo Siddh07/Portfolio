@@ -3,47 +3,47 @@ import { motion } from 'framer-motion';
 function Education() {
   const certifications = [
     {
-      img: '/assets/img/certification/HackerRank.png',
+      img: `${import.meta.env.BASE_URL}assets/img/certification/HackerRank.png`,
       title: 'Frontend Developer (React)',
       link: 'https://www.hackerrank.com/certificates/6828d0daf2c2'
     },
     {
-      img: '/assets/img/certification/udemy.png',
+      img: `${import.meta.env.BASE_URL}assets/img/certification/udemy.png`,
       title: 'CSS, Js and Bootstrap',
       link: 'https://www.udemy.com/certificate/UC-6db6cff0-98ca-4679-a248-cb9c4db22cc8/'
     },
     {
-      img: '/assets/img/certification/udemy.png',
+      img: `${import.meta.env.BASE_URL}assets/img/certification/udemy.png`,
       title: 'React-Basic',
       link: 'https://www.udemy.com/certificate/UC-bf888c85-29fe-4a57-b39c-0c5b16d0a950/'
     },
     {
-      img: '/assets/img/certification/udemy.png',
+      img: `${import.meta.env.BASE_URL}assets/img/certification/udemy.png`,
       title: 'React Course',
       link: 'https://www.udemy.com/certificate/UC-a2cf7e03-ae26-4640-885f-5b922fbcb7af/'
     },
     {
-      img: '/assets/img/certification/corsera.png',
+      img: `${import.meta.env.BASE_URL}assets/img/certification/corsera.png`,
       title: 'Adobe Illustrator',
       link: 'https://www.coursera.org/account/accomplishments/verify/8YGAWBHWBFYY'
     },
     {
-      img: '/assets/img/certification/corsera.png',
+      img: `${import.meta.env.BASE_URL}assets/img/certification/corsera.png`,
       title: 'Basic Image Classification',
       link: 'https://www.coursera.org/account/accomplishments/verify/5LSK7BJHACBV'
     },
     {
-      img: '/assets/img/certification/corsera.png',
+      img: `${import.meta.env.BASE_URL}assets/img/certification/corsera.png`,
       title: 'AWS S3 Basics',
       link: 'https://coursera.org/share/a49f7570c0cebf51c4bcc09f3e75f48e'
     },
     {
-      img: '/assets/img/certification/corsera.png',
+      img: `${import.meta.env.BASE_URL}assets/img/certification/corsera.png`,
       title: 'Figma',
       link: 'https://www.coursera.org/account/accomplishments/verify/6VGSFJ3ZYPDJ'
     },
     {
-      img: '/assets/img/certification/corsera.png',
+      img: `${import.meta.env.BASE_URL}assets/img/certification/corsera.png`,
       title: 'Data Analysis',
       link: 'https://www.coursera.org/account/accomplishments/verify/VBDSHNDFQT2T'
     }
@@ -87,7 +87,7 @@ function Education() {
             <div className="academic-content">
               <div className="academic-logo-section">
                 <div className="academic-logo-wrapper">
-                  <img src="/assets/img/education/Herald-College.png" alt="Herald College" />
+                  <img src={`${import.meta.env.BASE_URL}assets/img/education/Herald-College.png`} alt="Herald College" />
                 </div>
               </div>
               
@@ -120,7 +120,7 @@ function Education() {
             <div className="academic-content">
               <div className="academic-logo-section">
                 <div className="academic-logo-wrapper">
-                  <img src="/assets/img/education/VS-Niketan.png" alt="VS Niketan" />
+                  <img src={`${import.meta.env.BASE_URL}assets/img/education/VS-Niketan.png`} alt="VS Niketan" />
                 </div>
               </div>
               

@@ -9,7 +9,7 @@ function Projects() {
       title: 'E-Commerce Website',
       category: 'Web App',
       description: 'A modern and responsive e-commerce platform with product listings, shopping cart, and a clean design.',
-      image: '/assets/img/project/Ecommerce-website.png',
+      image: `${import.meta.env.BASE_URL}assets/img/project/Ecommerce-website.png`,
       demo: 'https://siddh07.github.io/Ecommerce/',
       repo: 'https://github.com/siddh07/Ecommerce',
       tech: ['React', 'Vite', 'JavaScript', 'CSS3']
@@ -18,7 +18,7 @@ function Projects() {
       title: 'School Website (Template)',
       category: 'Frontend Template',
       description: 'A professional school UI developed using React and Tailwind CSS for interactive school management features.',
-      image: '/assets/img/project/school.png',
+      image: `${import.meta.env.BASE_URL}assets/img/project/school.png`,
       demo: 'https://pujanjoci.github.io/School/',
       repo: 'https://github.com/pujanjoci/School',
       tech: ['React', 'Tailwind CSS', 'Vite', 'JavaScript']
@@ -27,7 +27,7 @@ function Projects() {
       title: 'School Template V2',
       category: 'Frontend Template',
       description: 'A modular school website template leveraging Vite and React for a performant development experience.',
-      image: '/assets/img/project/school-template.png',
+      image: `${import.meta.env.BASE_URL}assets/img/project/school-template.png`,
       demo: 'https://pujanjoci.github.io/school-template/',
       repo: 'https://github.com/Siddh07/School-template',
       tech: ['React', 'Tailwind CSS', 'Vite', 'JavaScript']

@@ -25,7 +25,7 @@ function About() {
             >
               <div className="profile-glow"></div>
               <div className="profile-frame">
-                <img src="/assets/img/profile.png" className="img-fluid" alt="Siddhant Shrestha" />
+                <img src={`${import.meta.env.BASE_URL}assets/img/profile.png`} className="img-fluid" alt="Siddhant Shrestha" />
               </div>
             </motion.div>
           </div>

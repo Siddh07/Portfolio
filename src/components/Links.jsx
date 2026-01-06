@@ -5,22 +5,22 @@ function Links() {
     {
       name: 'GitHub',
       url: 'https://github.com/Siddh07',
-      logo: '/assets/img/links/github.svg'
+      logo: `${import.meta.env.BASE_URL}assets/img/links/github.svg`
     },
     {
       name: 'Linkedin',
       url: 'https://www.linkedin.com/in/siddhant-shrestha-341853198/',
-      logo: '/assets/img/links/linkedin.svg'
+      logo: `${import.meta.env.BASE_URL}assets/img/links/linkedin.svg`
     },
     {
       name: 'Instagram',
       url: 'https://www.instagram.com/shresthasiddhant',
-      logo: '/assets/img/links/instagram.svg'
+      logo: `${import.meta.env.BASE_URL}assets/img/links/instagram.svg`
     },
     {
       name: 'Youtube',
       url: 'https://www.youtube.com',
-      logo: '/assets/img/links/youtube.svg'
+      logo: `${import.meta.env.BASE_URL}assets/img/links/youtube.svg`
     }
   ]
 
