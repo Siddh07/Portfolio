@@ -338,7 +338,7 @@ section .container {
 }
 
 .profile-frame::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   border: 2px solid rgba(255, 191, 0, 0.3);
@@ -358,7 +358,11 @@ section .container {
   transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle, rgba(255, 191, 0, 0.2) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 191, 0, 0.2) 0%,
+    transparent 70%
+  );
   opacity: 0;
   transition: opacity 0.5s ease;
   z-index: 0;
@@ -404,8 +408,6 @@ section .container {
   font-size: 1rem;
 }
 
-
-
 /* Experience Section Redesign */
 .experience-section {
   padding: 80px 0;
@@ -441,7 +443,7 @@ section .container {
 }
 
 .experience-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -511,7 +513,7 @@ section .container {
 }
 
 .responsibilities-list li::before {
-  content: '→';
+  content: "→";
   position: absolute;
   left: 0;
   color: #ffbf00;
@@ -643,13 +645,13 @@ section .container {
   border-radius: 50%;
   height: 175px;
   width: 175px;
-  border: 3px solid #04D361;
-  background: #8257E5;
+  border: 3px solid #04d361;
+  background: #8257e5;
   transition: border-color 0.5s, box-shadow 0.5s;
 }
 
 #container .profile:hover {
-  box-shadow: 0px 0px 20px 0px #8257E5;
+  box-shadow: 0px 0px 20px 0px #8257e5;
 }
 
 #container .links-container {
@@ -670,11 +672,11 @@ section .container {
   text-decoration: none;
   font-size: 18px;
   font-weight: 500;
-  color: #F4EDE8;
+  color: #f4ede8;
   height: 56px;
   max-width: 350px;
   width: 100%;
-  background: #3E3B47;
+  background: #3e3b47;
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -686,8 +688,8 @@ section .container {
 .link:hover {
   transform: translateY(-3px);
   max-width: 380px;
-  background: #8257E5;
-  color: #F4EDE8;
+  background: #8257e5;
+  color: #f4ede8;
 }
 
 .link + .link {
@@ -791,7 +793,7 @@ section .container {
 
 .skills-sidebar-left {
   width: 80px;
-  border-right: 1px solid rgba(255,255,255,0.05);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
   background: #0b0b0b;
 }
 
@@ -938,7 +940,7 @@ section .container {
   height: 65px;
   object-fit: contain;
   margin-bottom: 15px;
-  filter: drop-shadow(0 0 5px rgba(255,255,255,0.1));
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.1));
 }
 
 .skill-name {
@@ -1110,17 +1112,17 @@ section .container {
   .timeline-line {
     left: 20px;
   }
-  
+
   .timeline-item {
     width: 100%;
     padding-left: 50px;
     padding-right: 0;
   }
-  
+
   .timeline-dot {
     left: 20px !important;
   }
-  
+
   .timeline-item.right {
     margin-left: 0;
   }
@@ -1162,8 +1164,6 @@ section .container {
   max-width: 600px;
   margin-bottom: 40px;
 }
-
-
 
 /* Project Card */
 .project-card {
@@ -1298,6 +1298,60 @@ section .container {
   }
 }
 
+/* Certification Filter Buttons  || GITHUB STATS STYLING*/
+.cert-filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 50px;
+  padding-bottom: 30px;
+}
+
+.cert-filter button {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 10px 28px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+}
+
+.cert-filter button:hover {
+  background: rgba(255, 191, 0, 0.1);
+  border-color: #ffbf00;
+  transform: translateY(-2px);
+}
+
+.cert-filter button.active {
+  background: #ffbf00;
+  color: #000;
+  border-color: #ffbf00;
+  box-shadow: 0 5px 15px rgba(255, 191, 0, 0.3);
+}
+
+/* 
+=====================================================
+  GITHUB STATS STYLING
+  Logic: Styles for real-time data fetched from API
+=====================================================
+*/
+
+/* Last updated text */
+.project-updated {
+  font-size: 0.75rem; /* Small italic text */
+  color: #888; /* Grey color for secondary info */
+  margin-top: 15px;
+  font-style: italic;
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Separator line */
+  padding-top: 8px;
+}
+
 /* --- Online Certifications Redesign --- */
 .cert-section-header {
   margin-top: 80px;
@@ -1357,7 +1411,7 @@ section .container {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 0 5px rgba(255,255,255,0.05));
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.05));
 }
 
 .cert-title {
@@ -1524,11 +1578,12 @@ section .container {
   transform: translateY(-5px);
   background: rgba(255, 255, 255, 0.06);
   border-color: rgba(255, 191, 0, 0.4);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), inset 0 0 20px rgba(255, 191, 0, 0.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3),
+    inset 0 0 20px rgba(255, 191, 0, 0.05);
 }
 
 .academic-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -1652,45 +1707,80 @@ section .container {
   }
 }
 
+/* 
+=====================================================
+  SKELETON LOADING ANIMATION
+  Logic: Uses CSS animations to mimic content loading
+  Why: Better UX than a blank screen or spinner
+=====================================================
+*/
 
+/* Container for skeleton card */
+.skeleton-loading {
+  animation: pulse 1.5s ease-in-out infinite;
+}
 
+/* Fake Image Placeholder */
+.skeleton-image {
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(90deg, #2a2a2a 25%, #3a3a3a 50%, #2a2a2a 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
 
+/* Container for fake text lines */
+.skeleton-content {
+  padding: 15px;
+}
 
+/* Base style for all fake text lines */
+.skeleton-text {
+  background: linear-gradient(90deg, #2a2a2a 25%, #3a3a3a 50%, #2a2a2a 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+}
 
+/* Specific styling for fake title */
+.skeleton-title {
+  height: 24px; /* Title height */
+  margin-bottom: 15px;
+  width: 60%; /* Title is usually shorter than full width */
+}
 
+/* Specific styling for fake description */
+.skeleton-desc {
+  height: 16px; /* Text line height */
+  margin-bottom: 8px;
+  width: 100%;
+}
 
+/* 
+  SHIMMER ANIMATION KEYFRAMES 
+  Logic: Moves gradient background background-position from right to left
+*/
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* 
+  PULSE ANIMATION KEYFRAMES
+  Logic: Changes opacity to create breathing effect
+*/
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1; /* Fully visible */
+  }
+  50% {
+    opacity: 0.7; /* Slightly faded */
+  }
+}
