@@ -55,34 +55,6 @@ This project is configured for automatic deployment to GitHub Pages using GitHub
 
 Your site will be available at: `https://siddh07.github.io/Portfolio/`
 
-## 📁 Project Structure
-
-```
-react-portfolio/
-├── public/
-│   ├── assets/          # Images, icons, and static files
-│   ├── Resume_Siddhant-Shrestha.pdf
-│   └── favicon.ico
-├── src/
-│   ├── components/      # React components
-│   │   ├── Header.jsx
-│   │   ├── About.jsx
-│   │   ├── Education.jsx
-│   │   ├── Experience.jsx
-│   │   ├── Projects.jsx
-│   │   ├── Skills.jsx
-│   │   └── Links.jsx
-│   ├── App.jsx
-│   ├── App.css
-│   ├── main.jsx
-│   └── index.css
-├── .github/
-│   └── workflows/
-│       └── deploy.yml   # GitHub Actions deployment
-├── package.json
-└── vite.config.js
-```
-
 ## 🎨 Customization
 
 ### Update Personal Information
